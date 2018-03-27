@@ -10,13 +10,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Tanya-Bakhmatovich/FrontCamp-React.git"
+    "url": "git+https://github.com/Tanya-Bakhmatovich/Angular-part2.git"
   },
   "author": "Tanya Bakhmatovich",
   "license": "ISC",
-  "bugs": {
-    "url": ""
-  },
   "homepage": "",
   "dependencies": {
     "@uirouter/angularjs": "^1.0.15",
