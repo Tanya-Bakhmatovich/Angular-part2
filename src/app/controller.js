@@ -1,7 +1,7 @@
 import angular from 'angular';
 import _ from 'underscore';
 
-angular
+const controller = angular
     .module('todoApp')
     .controller('TodoController', ['$scope', '$state', '$resource', '$stateParams', 'storageService', 'pagerService', (
         $scope,
@@ -12,7 +12,7 @@ angular
         pagerService,
     ) => {
         const articles = $resource('/todo.json');
-console.log(articles);
+
         storageService.articles.length === 0 && articles.get()
             .$promise.then(function(response) {
                 storageService.articles = response.articles ? response.articles : storageService.articles;
@@ -86,4 +86,6 @@ console.log(articles);
             $scope.listOfArticles = storageService.articles.filter(({ time }) =>
                 time > Number(Date.now()) - Number(day) * 86400000);
         }
-    }])
+    }]);
+
+    export { controller };

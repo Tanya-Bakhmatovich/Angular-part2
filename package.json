@@ -6,7 +6,7 @@
   "scripts": {
     "build": "webpack-dev-server --progress --colors --config ./webpack.config.js",
     "start": "webpack -w & node ./server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "istanbul cover karma start karma.conf.js"
   },
   "repository": {
     "type": "git",
@@ -41,11 +41,18 @@
     "extract-text-webpack-plugin": "^4.0.0-beta.0",
     "file-loader": "^1.1.11",
     "html-loader": "^0.5.5",
+    "html-webpack-plugin": "^3.0.6",
+    "istanbul": "^0.4.5",
+    "jasmine": "^2.99.0",
+    "jasmine-core": "^2.99.0",
+    "karma": "^2.0.0",
+    "karma-chrome-launcher": "^2.2.0",
+    "karma-jasmine": "^1.1.1",
+    "karma-webpack": "^3.0.0",
     "style-loader": "^0.20.3",
     "url-loader": "^1.0.1",
     "webpack": "^4.1.1",
     "webpack-cli": "^2.0.12",
-    "webpack-dev-server": "^3.1.1",
-    "html-webpack-plugin": "^3.0.6"
+    "webpack-dev-server": "^3.1.1"
   }
 }

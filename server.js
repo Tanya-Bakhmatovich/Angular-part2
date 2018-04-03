@@ -15,4 +15,4 @@ router.get('/todo.json', (req, res, next) => {
 });
 
 app.use(router);
-app.listen(8000);
+app.listen(8000, () => console.log('Listening on port 8000'));
