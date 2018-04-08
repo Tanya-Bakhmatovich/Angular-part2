@@ -1,2 +1,6 @@
 dist/
 node_modules/
+coverage/
+karma_html/
+.stryker-tmp/
+reports/

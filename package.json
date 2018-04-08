@@ -2,11 +2,12 @@
   "name": "frontcamp-angular",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
+  "main": "server.js",
   "scripts": {
     "build": "webpack-dev-server --progress --colors --config ./webpack.config.js",
-    "start": "webpack -w & node ./server.js",
-    "test": "istanbul cover karma start karma.conf.js"
+    "start": "node ./server.js",
+    "test": "istanbul cover karma start karma.conf.js",
+    "stryker": "stryker run stryker.conf.js"
   },
   "repository": {
     "type": "git",
@@ -24,6 +25,7 @@
     "babel-core": "^6.26.0",
     "babel-polyfill": "^6.26.0",
     "express": "^4.16.3",
+    "serve-static": "^1.13.2",
     "underscore": "^1.8.3"
   },
   "devDependencies": {
@@ -44,11 +46,21 @@
     "html-webpack-plugin": "^3.0.6",
     "istanbul": "^0.4.5",
     "jasmine": "^2.99.0",
-    "jasmine-core": "^2.99.0",
+    "jasmine-angular-snapshot-testing": "^1.0.1",
+    "jasmine-core": "^2.99.1",
+    "jest": "^22.4.3",
     "karma": "^2.0.0",
     "karma-chrome-launcher": "^2.2.0",
+    "karma-coverage-istanbul-reporter": "^1.4.2",
+    "karma-html-reporter": "^0.2.7",
     "karma-jasmine": "^1.1.1",
+    "karma-snapshot": "^0.6.0",
     "karma-webpack": "^3.0.0",
+    "stryker": "^0.21.0",
+    "stryker-api": "^0.15.0",
+    "stryker-html-reporter": "^0.13.0",
+    "stryker-jasmine": "^0.8.0",
+    "stryker-karma-runner": "^0.14.1",
     "style-loader": "^0.20.3",
     "url-loader": "^1.0.1",
     "webpack": "^4.1.1",

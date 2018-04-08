@@ -2,7 +2,7 @@
 // Generated on Sat Mar 31 2018 12:21:14 GMT+0300 (+03)
 'use strict';
 
-let webpackConfig = require('./webpack.config');
+// let webpackConfig = require('./webpack.config');
 
 module.exports = function(config) {
   config.set({
@@ -22,7 +22,9 @@ module.exports = function(config) {
         './node_modules/angular-mocks/angular-mocks.js',
         './node_modules/angular-resource/angular-resource.js',
         './node_modules/@uirouter/angularjs/release/angular-ui-router.js',
-        './spec/tests.bundle.js'
+        './node_modules/lodash/lodash.js',
+        'src/*.js',
+        'spec/src/*.js',
     ],
 
 
@@ -30,18 +32,20 @@ module.exports = function(config) {
     exclude: [
     ],
 
+    reporters: ['progress', 'coverage', 'html'],
+
 
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
-        'spec/tests.bundle.js': ['webpack']
+        'src/**/*.js': ['coverage'],
+        // 'spec/tests.bundle.js': ['webpack']
     },
 
 
     // test results reporter to use
     // possible values: 'dots', 'progress'
     // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-    reporters: ['progress'],
 
 
     // web server port
@@ -77,13 +81,15 @@ module.exports = function(config) {
     plugins: [
         'karma-chrome-launcher',
         'karma-jasmine',
-        'karma-webpack'
+        'karma-coverage',
+        'karma-html-reporter',
+        // 'karma-webpack'
     ],
 
-      coverageReporter: {
-        type : 'html',
-        dir : 'coverage/'
-      },
+    coverageReporter: {
+  type : 'html',
+  dir : 'coverage/',
+},
 
     // webpack: webpackConfig,
 
